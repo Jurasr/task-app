@@ -4,36 +4,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Task App</title>
+    <title>Todo App</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<main>
-    <div class="add-task">
-        <input type="text" class="add-task__input" placeholder="Add task">
-        <button class="add-task__add">Add</button>
-        <p class="add-task__error">
-            Task should be longer than 4 characters
-        </p>
-    </div>
-    <div class="tasks">
-        <div class="task">
-            <div class="task__title">Task 1</div>
-            <button class="task__complete">V</button>
-        </div>
-        <div class="task">
-            <div class="task__title">Task 2</div>
-            <button class="task__complete">V</button>
-        </div>
-        <div class="task">
-            <div class="task__title">Task 3</div>
-            <button class="task__complete">V</button>
-        </div>
-    </div>
-</main>
+
 
 <body>
-    <script src="script.js
-"></script>
+    <main>
+        <h1 class="title">Task App</h1>
+        <div class="add-task">
+            <input type="text" class="add-task__input" placeholder="Add your task">
+            <button class="add-task__button">
+                +
+            </button>
+            <p class="add-task__status-message">Task created successfully</p>
+        </div>
+        <ul class="task-list">
+            <li class="task">
+                <span class="task__title">Task 1</span>
+                <div>
+                    <span class="task__edit">Edit</span>
+                    <span class="task__delete">Delete</span>
+                </div>
+            </li>
+            <li class="task">
+                <span class="task__title">Task 2</span>
+                <div>
+                    <span class="task__edit">Edit</span>
+                    <span class="task__delete">Delete</span>
+                </div>
+            </li>
+            <li class="task">
+                <span class="task__title">Task 3</span>
+                <div>
+                    <span class="task__edit">Edit</span>
+                    <span class="task__delete">Delete</span>
+                </div>
+            </li>
+        </ul>
+    </main>
+    <script src="script.js"></script>
 </body>
 
 </html>

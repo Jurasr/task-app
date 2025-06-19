@@ -1,36 +1,19 @@
 const addTaskInput = document.querySelector('.add-task__input');
-const addTaskButton = document.querySelector('.add-task__add');
-const tasks = document.querySelectorAll('.tasks');
-const errorMessage = document.querySelector('.add-task__error');
+const addTaskButton = document.querySelector('.add-task__button');
+const statusMessage = document.querySelector('.add-task__status-message');
 
-const validateInput = (input) => {
-    if (input.length > 4) {
-        errorMessage.style.display = 'none';
-        return true;
+addTaskButton.addEventListener('click', () => {
+    if (addTaskInput.value.length > 3) {
+        statusMessage.textContent = "Task created successfully";
+        statusMessage.style.display = 'block';
+        statusMessage.style.opacity = '1';
+        statusMessage.style.color = "#28ac2e";
+        setTimeout(() => {
+            statusMessage.style.display = 'none';
+        }, 1000);
     } else {
-        errorMessage.style.display = 'block';
-        return false;
+        statusMessage.textContent = "Task should be longer than 3 characters";
+        statusMessage.style.color = "red";
+        statusMessage.style.display = 'block';
     }
-};
-
-const addTaskEvent = (task) => {
-    task.addEventListener
-};
-
-addTaskButton.addEventListener('click', (event) => {
-    const inputText = addTaskInput.value;
-    const validation = validateInput(inputText);
-    if (validation) {
-        const task = document.createElement('div');
-        task.className = 'task';
-        task.innerHTML = `
-            <div class="task__title">${addTaskInput.value}</div>
-            <button class="task__complete">V</button>
-    `;
-        tasks.appendChild(task);
-    };
 })
-
-
-
-

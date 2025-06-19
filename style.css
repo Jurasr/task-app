@@ -1,44 +1,112 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border: 0;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+    color: inherit;
+    background: none;
+    border: none;
+    outline: none;
+}
+
+html,
+body {
+    height: 100%;
+}
+
 main {
     display: flex;
     align-items: center;
     height: 100vh;
     flex-direction: column;
-    margin-top: 5rem;
     font-family: sans-serif;
 }
 
-.add-task__input {
-    width: 20rem;
-    border-radius: 5px;
-    padding: 0.5rem 0.5rem;
+.title {
+    margin: 3rem 0 1.5rem 0;
 }
 
-.add-task__add {
-    margin-left: 0.5rem;
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
+.add-task {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.add-task__input {
+    border: none;
+    background-color: #edeef0;
+    width: 14rem;
+    padding: 0.7rem 1rem;
+    border-radius: 1rem;
+    color: #696969
+}
+
+.add-task__button {
+    padding: 0 0.6rem;
+    border-radius: 1rem;
+    border: none;
+    background-color: #30c938;
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 2rem;
+    color: #070707;
+}
+
+.add-task__status-message {
+    font-size: 0.8rem;
+    margin-top: 1rem;
+    color: #28ac2e;
+    font-weight: 600;
+    display: none;
+    transition: opacity 1s ease-in-out;
+    opacity: 0;
+}
+
+.task-list {
+    margin-top: 1rem;
 }
 
 .task {
+    width: 12rem;
+    margin-bottom: 0.5rem;
     display: flex;
-    width: 23rem;
-    margin-top: 2rem;
-    border-bottom: 1px solid #858585;
-    padding-bottom: 0.5rem;
+    justify-content: space-between;
+    background-color: #edeef0;
+    color: #050507;
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
 }
 
-.task__title {
-    margin-right: auto;
-}
+.task__title {}
 
-.task__complete {
-    border: 1px solid rgb(49, 49, 49);
-    background-color: #f0f0f0;
-    border-radius: 5px;
-    margin: 2px;
-}
-
-.add-task__error {
-    display: none;
-    color: rgb(209, 2, 2);
+.task__edit,
+.task__delete {
+    font-size: 0.8rem;
+    color: #28ac2e;
 }
