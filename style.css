@@ -93,7 +93,7 @@ main {
 }
 
 .task {
-    width: 12rem;
+    width: 22rem;
     margin-bottom: 0.5rem;
     display: flex;
     justify-content: space-between;
@@ -103,10 +103,18 @@ main {
     border-radius: 1rem;
 }
 
-.task__title {}
+.task__title {
+    width: 14rem;
+}
 
 .task__edit,
 .task__delete {
     font-size: 0.8rem;
     color: #28ac2e;
+    cursor: pointer;
+}
+
+.task__edit:hover,
+.task__delete:hover {
+    text-decoration: underline;
 }
