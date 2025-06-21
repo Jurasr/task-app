@@ -2,15 +2,33 @@ const addTaskInput = document.querySelector('.add-task__input');
 const addTaskButton = document.querySelector('.add-task__button');
 const statusMessage = document.querySelector('.add-task__status-message');
 const taskList = document.querySelector('.task-list');
+const tasks = document.querySelectorAll('.task');
 
 const addTaskEvents = (task) => {
     task.addEventListener('click', (event) => {
         const targetClassName = event.target.className;
         if (targetClassName === 'task__edit') {
-            console.log('edit');
+            const mode = event.target.textContent;
+            const input = event.target.parentNode.parentNode.querySelector('.task__title');
+            if (mode === 'Edit') {
+                input.disabled = false;
+                input.focus();
+                input.setSelectionRange(input.value.length, input.value.length); // Places cursor at the end
+                event.target.textContent = 'Save';
+            } else {
+                input.disabled = true;
+                event.target.textContent = 'Edit';
+            }
         } else if (targetClassName === 'task__delete') {
-            console.log('delete');
+            const task = event.target.parentNode.parentNode;
+            task.remove();
         }
+    });
+}
+
+const init = () => {
+    tasks.forEach(task => {
+        addTaskEvents(task);
     });
 }
 
@@ -58,3 +76,5 @@ addTaskButton.addEventListener('click', () => {
         disappearStatusMessage();
     }
 })
+
+init();
